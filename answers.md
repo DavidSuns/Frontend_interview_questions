@@ -2,7 +2,8 @@
 ##介绍
 -----------
 根据前端的知识架构总结的前端面试的题库，难度由低到高，全面测试前端工程师业务水平。
-答案在[answers](./answers.md)中，题库仍在扩充之中
+答案在[answers](./answers.md)中，题库仍在扩充之中。
+由于水平有限，问题和答案难免有纰漏，还望不吝指正。
 
 ##Javascript
 
@@ -64,11 +65,19 @@ alert(b);
 
 ####10. 什么是异步函数？
 
-
+>_Answer_: 需回答什么是异步函数，并在js中实现异步的方式：回调，事件监听，promise等。
 
 ####11. 什么是DOM？如何在DOM中实现增删改查？
 
+>_Answer_:文档对象模型，js操作HTMl和xml的接口。
+>增：createElement，createTextNode，appendChild等
+>删：removeChild
+>改：element.value, element.className, element.name ...
+>查：getElementById, getElementByName, getElementByTagName,parentNode,children ....
+
 ####12. 什么是ajax，如何使用ajax向服务器发送get请求，并处理服务器的返回值。
+
+>_Answer_:略。
 
 ###Normal
 ---------------
@@ -95,6 +104,8 @@ alert(a);
 
 ```
 
+>_Answer_:打印undefined。 变量声明先于内容执行。
+
 ####8.下面一段代码中，alert函数打印结果是什么
 ```javascript
 
@@ -106,6 +117,8 @@ for(var i= 0; i< 4; i++) {
 
 ```
 
+>_Answer_: 打印4遍4。setTimeout要在线程空闲的时候才会执行
+
 ####9.下面一段代码中，alert函数打印结果是什么,为什么
 ```javascript
 function a() {
@@ -113,6 +126,8 @@ function a() {
 }
 a.call(null);
 ```
+
+>_Answer_: 打印window对象。
 
 ####10.下面一段代码中，alert函数打印结果是什么,为什么
 ```javascript
@@ -122,6 +137,8 @@ function b(x, y, a) {
 }
 b(1, 2, 3);
 ```
+
+>_Answer_: 打印3。arugments和实参不在一个内存地址
 
 ####11.下面一段代码中，alert函数打印结果是什么
 ```javascript
@@ -134,6 +151,8 @@ alert(a);
 
 ```
 
+>_Answer_: 打印 function a。 函数声明会覆盖变量声明
+
 ####12.下面一段代码中，alert函数打印结果是什么,为什么
 ```javascript
 var obj1 = {a:1,b:2};
@@ -145,16 +164,21 @@ function fun1(obj) {
 fun1(obj1);
 alert(obj1);
 
-var obj2 = 5;
+var obj2 = {a:1,b:2};
 
 function fun2(obj) {
-    obj = 6;
+    obj.a = 3;
+    obj.b = 4;
 };
 
 fun2(obj2);
 alert(obj2);
 
 ```
+
+>_Answer_: 第一遍打印：{c:2,d:3}，第二遍打印6。
+>考察js的传参策略，传的是参数引用的拷贝。
+
 
 ####13. 什么是浅拷贝，深拷贝，实现js中深拷贝
 
