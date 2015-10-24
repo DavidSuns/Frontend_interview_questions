@@ -257,3 +257,28 @@ alert(obj2);
 ####6. 你是如何调试前端代码的？
 ####7. 使用过前端自动化工具么？你都用它做了什么？
 ####8. 什么是AMD？它有哪些好处？你使用过哪些库去实现AMD。
+
+
+##版本控制
+
+####1. 什么是集中式版本控制系统，什么是分布式版本控制系统？
+>_Answer_:集中式版本控制系统，版本库是集中存放在中央服务器的；分布式版本控制系统根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库。
+>分布式有点：无需联网，迅速，安全性。
+
+####2. 解释git中暂存区的概念？
+>_Answer_: 使用git add 将修改从 工作区移到暂存区，git commit 命令会将所有暂存区的修改全部提交到当前分支。
+
+####3. Git中如何回退到一个指定版本，需要执行哪些操作？
+>_Answer_: 1. 查看提交历史确定版本号： git log ; 2.版本回退 git reset --hard  XXX 
+
+####4. 请依次执行如下操作，创建一个新分支，并将工作区修改提交到当前新分支，将新分支提交到远程代码库，删除当前新分支。
+>_Answer_: 创建新分支并切换：git checkout -b
+>修改提交：1.检查有哪些修改： git status; 2. 加入暂存区： git add; 3. 提交修改： git commit -m; 
+4.提交到远程：git push origin XXX; 5.删除分支：git checkout master , git branch -d XXX 。   
+
+####5. 如何解决分支冲突？
+>_Answer_: git merge XXX ,  git rebase XXX
+>可以顺便问rebase和merge的区别
+
+####6. 如何为命令配置别名？
+>_Answer_: git config --global alias customCommand command
