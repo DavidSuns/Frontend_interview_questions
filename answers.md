@@ -200,30 +200,14 @@ alert(obj2);
 ###Simple
 --------------
 ####1. css的优先级规则
->_Answer: 内联(1000) > id(100) > class(10) > tag(1)
 ####2. 块级元素和行内元素是什么，有什么区别，它们可以互相转换吗？
-####3. css中有几种布局，及他们的作用。
->_Answer_:absolute, relative, fixed, inherit, static。 作用略。 
+####3. css中有几种布局，及他们的作用
 ####4. 什么是float，有什么办法清除浮动。
->_Answer_:脱离文档流，紧贴父元素左或右。
->相邻的浮动元素，left属性最前面的元素，排在最左面。成为浮动元素后，在浮动层拥有内联元素的"特性"，当多个浮动元素1排容不下时，就换行。
->浮动副作用：父元素不被撑开，导致背景，边框，margin,padding等无法正常显示。
->清除浮动：clear: left | right | both;  如果能答到BFC则加分。
 ####4. 什么是伪类，伪元素，它们分别都有哪些？
->_Answer_: 伪类：:active, :link, :hover, :focus, :visited, :first-child, :lang.
->伪元素：:first-letter, first-line, :before, :after. 
->可以顺便问设置超链接样式时的love-hate原则。
 ####5. Sass是什么，有使用过吗？
->_Answer_:略。
 ####6. css中有哪些选择符？
->Answer: id, class, tag, > , + , 伪类, *。
->可以考一下 1. .a .b {}; 2. .a , .b{}; 3. .a.b {} 区别。  
 ####7. 什么是盒子模型？
->_Answer: content + padding + border + margin;
->ie不同，会把padding,border算入content。(ie6 - ie8 怪异模式)
->可以顺道说一说box-sizing属性（content-box | border-box）。
 ####8. 有没有使用过css动画？
->_Answer_:可以考一下css动画的常用属性。
 
 ##Normal
 --------------
@@ -244,24 +228,16 @@ alert(obj2);
 ###Simple
 -------------
 ####1. doctype 元素是什么， 有什么作用？
->_Answers_：向浏览器说明文档解析类型，避免怪异模式。
->不是html标签，需写在第一行。
 ####2. 解释一下什么是HTML语义化，语义化有什么好处，我们做什么可以使网站语义化更好？
->_Answers_: 
->好处：可读性，seo。
->做法：h5新标签，h1-h6, em , b , i 等，总之要用最适合的标签去表示内容，而不是靠css去改变标签样式。
 ####3. HTML5提供了那些新的特性？
 ####4. meta标签什么的，你常用它来做什么？
->_Answer_:提供页面元信息和http标题信息，用处：seo， 响应式设计，http信息设置等。
 ####5. img标签中的title和alt分别是做什么的？
->_Answer_:title:是鼠标悬浮在图片上出现的文字说明，alt：是图片因故无法加载出现的替代文字说明
 
 ###Normal
 --------------
 ####1. 什么是canvas，svg，它们有什么区别，使用过它们么？
 ####2. 什么是iframe，我们能用iframe做什么，使用iframe是好还是不好，为什么？
 ####3. 什么是HTML模板？有没有使用过HTML模板（框架不限）？
->_Answer:略。
 ####4. 什么是SEO，如何给网站提供更好的SEO。
 ####5. script标签的defer和async属性有什么作用？
 
@@ -285,7 +261,30 @@ alert(obj2);
 
 >_Answer_: 跨站请求伪造，只有在你同时打开已登录的网站和危险网站的时候才有可能发生，攻击者在危险网站中诱使
 > 用户点击攻击性地登录网站链接，利用cookie伪造了你的身份，便可以修改你的用户数据。
-> 防范对策：使用post上传数据；cookie hash；验证码；检查refered
+> 防范对策：使用post上传数据；cookie hash；验证码；检查refered，是不明来源的请求拒绝执行。
+
+##ES6
+
+------------------
+####1. 使用let声明变量，和使用var声明变量的区别有哪些？
+
+>_Answer_:
+> 1. 增加了块作用域概念，只在申明它的代码块中有效。
+> 2. 不存在变量提升。
+> 3. 不允许重复声明。
+
+####2. const变量个let变量的异同？
+
+>_Answer_: 同：1.只在代码块中有效。2.不能重复声明。 3.不存在变量提升。
+> 异：1.const值声明后不能改变。
+
+####3. es5中有几种声明变量的方式，es6中有几种声明变量的方式？
+
+>_Answer_: ES5: var, function;  ES6: var, function, let, const, class, import.
+
+####4.
+####5.
+####6.
 
 ##Others
 
@@ -297,28 +296,3 @@ alert(obj2);
 ####6. 你是如何调试前端代码的？
 ####7. 使用过前端自动化工具么？你都用它做了什么？
 ####8. 什么是AMD？它有哪些好处？你使用过哪些库去实现AMD。
-
-
-##版本控制
-
-####1. 什么是集中式版本控制系统，什么是分布式版本控制系统？
->_Answer_:集中式版本控制系统，版本库是集中存放在中央服务器的；分布式版本控制系统根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库。
->分布式有点：无需联网，迅速，安全性。
-
-####2. 解释git中暂存区的概念？
->_Answer_: 使用git add 将修改从 工作区移到暂存区，git commit 命令会将所有暂存区的修改全部提交到当前分支。
-
-####3. Git中如何回退到一个指定版本，需要执行哪些操作？
->_Answer_: 1. 查看提交历史确定版本号： git log ; 2.版本回退 git reset --hard  XXX 
-
-####4. 请依次执行如下操作，创建一个新分支，并将工作区修改提交到当前新分支，将新分支提交到远程代码库，删除当前新分支。
->_Answer_: 创建新分支并切换：git checkout -b
->修改提交：1.检查有哪些修改： git status; 2. 加入暂存区： git add; 3. 提交修改： git commit -m; 
-4.提交到远程：git push origin XXX; 5.删除分支：git checkout master , git branch -d XXX 。   
-
-####5. 如何解决分支冲突？
->_Answer_: git merge XXX ,  git rebase XXX
->可以顺便问rebase和merge的区别
-
-####6. 如何为命令配置别名？
->_Answer_: git config --global alias customCommand command
