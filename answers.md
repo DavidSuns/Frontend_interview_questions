@@ -282,7 +282,10 @@ alert(obj2);
 
 >_Answer_: ES5: var, function;  ES6: var, function, let, const, class, import.
 
-####4.
+####4. 互换变量x和y的值
+
+>_Answer_: [x, y] = [y, x];
+
 ####5.
 ####6.
 
