@@ -207,8 +207,34 @@ alert(obj2);
 ####2. const变量个let变量的异同？
 ####3. es5中有几种声明变量的方式，es6中有几种声明变量的方式？
 ####4. 互换变量x和y的值.
-####5.
-####6.
+####5. 请问以下两种写法的区别，对应不同情况下的x, y值？
+```javascript
+// 写法一
+function m1({x = 0, y = 0} = {}) {
+  return [x, y];
+}
+
+// 写法二
+function m2({x, y} = { x: 0, y: 0 }) {
+  return [x, y];
+}
+###
+```
+
+####6. 以下代码的输出值是多少？
+
+```javascript
+function foo() {
+  setTimeout(() => {
+    console.log('id:', this.id);
+  }, 100);
+}
+
+var id = 21;
+
+foo.call({ id: 42 });
+// id: 42
+```
 
 ##Others
 ------------------

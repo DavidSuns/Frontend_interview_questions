@@ -286,8 +286,59 @@ alert(obj2);
 
 >_Answer_: [x, y] = [y, x];
 
-####5.
-####6.
+####5. ####5. 请问以下两种写法的区别，对应不同情况下的x, y值？
+```javascript
+// 写法一
+function m1({x = 0, y = 0} = {}) {
+  return [x, y];
+}
+
+// 写法二
+function m2({x, y} = { x: 0, y: 0 }) {
+  return [x, y];
+}
+###
+```
+
+>_Answer_:
+
+```javascript
+// 函数没有参数的情况
+m1() // [0, 0]
+m2() // [0, 0]
+
+// x和y都有值的情况
+m1({x: 3, y: 8}) // [3, 8]
+m2({x: 3, y: 8}) // [3, 8]
+
+// x有值，y无值的情况
+m1({x: 3}) // [3, 0]
+m2({x: 3}) // [3, undefined]
+
+// x和y都无值的情况
+m1({}) // [0, 0];
+m2({}) // [undefined, undefined]
+
+m1({z: 3}) // [0, 0]
+m2({z: 3}) // [undefined, undefined]
+```
+
+####6. 以下代码的输出值是多少？
+
+```javascript
+function foo() {
+  setTimeout(() => {
+    console.log('id:', this.id);
+  }, 100);
+}
+
+var id = 21;
+
+foo.call({ id: 42 });
+// id: 42
+```
+>_Answer_: 42， 因为在箭头函数中，函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+
 
 ##Others
 
