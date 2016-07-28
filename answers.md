@@ -348,6 +348,15 @@ foo.call({ id: 42 });
 >_Answer_: Set只允许添加不重复的值。weakSet的区别在于它只能储存对象，且都是弱引用。所以垃圾回收机制在回收内存空间时
 >不考虑是否在weakSet中。所以weakSet不可遍历。
 
+###9. ES6中Generator函数和yield语句是什么？有什么作用？
+
+>_Answer_: 可以将generator函数看作一个状态机，返回一个遍历对象，通过next函数依次遍历状态。
+> yield语句用来定义状态，是可以暂停执行状态的函数，只有调用next才会遍历下一个状态。
+> 在将异步操作转为同步操作时比较有用。
+
+###10. ES6中yield语句和yield*的区别是什么？
+
+>_Answer_: yield* 后面可以解析generator函数，而yield不行。
 
 ##Others
 

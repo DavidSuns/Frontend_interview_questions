@@ -240,6 +240,9 @@ foo.call({ id: 42 });
 
 ####8. ES6中Set是怎样的数据结构？和weakSet的区别是什么？
 
+###9. ES6中Generator函数和yield语句是什么？有什么作用？
+
+###10. ES6中yield语句和yield*的区别是什么？
 
 ##Others
 ------------------
