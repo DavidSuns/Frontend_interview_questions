@@ -358,6 +358,11 @@ foo.call({ id: 42 });
 
 >_Answer_: yield* 后面可以解析generator函数，而yield不行。
 
+###11. 使用ES6后，使用了哪些编程风格？
+
+>_Answer_: 1.let和const替代var；2.字符串拼接；3.解构赋值；4.箭头函数，函数默认值；5.使用class语法糖去定义类；
+>6.es6模块应用； 7. promise，async，await 的应用；等
+
 ##Others
 
 ####1. 对前端性能有研究么？有多少种方法优化前端性能？
