@@ -371,7 +371,11 @@ foo.call({ id: 42 });
 > 常用方法有： getDefaultProps,用于初始化props; getInitialState,用于初始化state; render,用于渲染dom; componentDidMount, 用于在初渲染到dom的时候，提供一些挂载方法，如ajax等; shouldComponentUpdate: 用于确定组件是否应该被刷新。
 
 ##2. React中如何得到dom对象？
->_Answer_: 1.reactDOM提供了findDOMNode; 2. refs
+>_Answer_: 1.reactDOM提供了findDOMNode; 2. refs.
+
+##3. 你是如何优化react渲染性能的？它的原理是什么？
+>_Answer_: pureRenderMixin and immutable.js;
+> 原理： componentShouldUpdate,和浅相等。
 
 
 ##Others
