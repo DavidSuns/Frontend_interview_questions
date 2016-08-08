@@ -363,6 +363,17 @@ foo.call({ id: 42 });
 >_Answer_: 1.let和const替代var；2.字符串拼接；3.解构赋值；4.箭头函数，函数默认值；5.使用class语法糖去定义类；
 >6.es6模块应用； 7. promise，async，await 的应用；等
 
+##React
+
+##1. React组件的生命周期是怎样的, 这里面有哪些常用的方法？
+>_Answer_: 组件实例化： getDefaultProps -> getInitialState -> componentWillMount -> render -> componentDidMount -> componentWillUnmount
+> 属性改变： componentWillReceiveProps -> shouldComponentUpdate -> componentWillUpdate -> componentDidUpdate.
+> 常用方法有： getDefaultProps,用于初始化props; getInitialState,用于初始化state; render,用于渲染dom; componentDidMount, 用于在初渲染到dom的时候，提供一些挂载方法，如ajax等; shouldComponentUpdate: 用于确定组件是否应该被刷新。
+
+##2. React中如何得到dom对象？
+>_Answer_: 1.reactDOM提供了findDOMNode; 2. refs
+
+
 ##Others
 
 ####1. 对前端性能有研究么？有多少种方法优化前端性能？
